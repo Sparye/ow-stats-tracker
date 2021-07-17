@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import "./Dropdown.css";
 
 type Props = {
   heroName: string;
@@ -12,14 +13,16 @@ const Dropdown: React.FC<Props> = (props) => {
     { value: "roadhog", label: "Roadhog" },
   ];
   return (
-    <div>
-      <Select
-        options={heroList}
-        onChange={(e) => {
-          console.log(e);
-          props.setHeroName(e!.value);
-        }}
-      />
+    <div className="container">
+      <div className="dropdown">
+        <Select
+          options={heroList}
+          onChange={(e) => {
+            console.log(e);
+            props.setHeroName(e!.value);
+          }}
+        />
+      </div>
     </div>
   );
 };
