@@ -1,10 +1,15 @@
 import React, { FC } from "react";
 import "./Card.css";
 
-const Card: React.FC<string> = (props) => {
+type Props = {
+  data: string;
+  heroName: string;
+};
+
+const Card: React.FC<Props> = (props) => {
   //   console.log(props);
-  const keys = Object.keys(props);
-  const values = Object.values(props);
+  const keys = Object.keys(props.data);
+  const values = Object.values(props.data);
   //   let obj = JSON.parse(props);
   return (
     <div className="block">
@@ -12,7 +17,10 @@ const Card: React.FC<string> = (props) => {
         <div className="names">
           {keys.map((key) => {
             return (
-              <div className="nameBlock" key={key}>
+              <div
+                className="nameBlock"
+                key={key + props.heroName + Math.random()}
+              >
                 {key}
               </div>
             );
@@ -22,7 +30,10 @@ const Card: React.FC<string> = (props) => {
         <div className="values">
           {values.map((value) => {
             return (
-              <div className="valueBlock" key={value}>
+              <div
+                className="valueBlock"
+                key={value + props.heroName + Math.random()}
+              >
                 {value}
               </div>
             );

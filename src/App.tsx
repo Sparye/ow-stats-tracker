@@ -3,51 +3,60 @@ import "./App.css";
 import axios from "axios";
 import Card from "./Card";
 import Dropdown from "./Dropdown";
+import SelectPlayer from "./SelectPlayer";
 
 function App() {
   const [userData, setUserData] = useState<string>("");
   const [nameData, setNameData] = useState<string[]>();
   const [heroName, setHeroName] = useState<string>("zenyatta");
+  const [heading, setHeading] = useState<string>("Zenyatta");
+  const [playerName, setPlayerName] = useState<string>("JigglyPuff-11568");
 
-  const input = "zenyatta";
   useEffect(() => {
     getStats();
-  }, [heroName]);
+  }, [heroName, playerName]);
 
-  const URLHead = "https://ow-api.com/v1/stats/pc/us/JigglyPuff-11568/heroes/";
+  // const URLHead = "https://ow-api.com/v1/stats/pc/us/JigglyPuff-11568/heroes/";
+  const URLHead = "https://ow-api.com/v1/stats/pc/us/";
 
   const getStats = async () => {
-    // const response = await fetch(apiURL);
-    // const jsonData = await response.json();
-    // console.log(jsonData.competitiveStats.careerStats[input].average);
-
-    // await setUserData(jsonData.competitiveStats.careerStats[input].average);
-    // console.log(userData);
-    // const keys = await Object.keys(userData);
-    // console.log(keys);
-
-    fetch(`${URLHead}${heroName}`)
+    fetch(`${URLHead}${playerName}/heroes/${heroName}`)
       .then((res) => {
+        console.log(res);
         return res.json();
       })
       .then((data) => {
-        // console.log(data);
-
-        const average = data.competitiveStats.careerStats[heroName].average;
-        const names = Object.keys(average);
+        console.log(data);
+        try {
+          const average = data.competitiveStats.careerStats[heroName].average;
+          const names = Object.keys(average);
+          setUserData(average);
+        } catch (error) {
+          console.log(error);
+        }
+        // const average = data.competitiveStats.careerStats[heroName].average;
+        // const names = Object.keys(average);
         // console.log(names);
         // console.log(average);
-        setUserData(average);
-        setNameData(names);
+        // setUserData(average);
+        // setNameData(names);
       });
   };
   // const resp nse = axios.get(apiURL);
 
   return (
     <div className="App">
-      <h1>{heroName}</h1>
-      <Dropdown heroName={heroName} setHeroName={setHeroName} />
-      {userData && <Card {...userData} />}
+      <h1>{heading}</h1>
+      <div className="selectContainer">
+        <SelectPlayer setPlayerName={setPlayerName} />
+        <Dropdown
+          heroName={heroName}
+          setHeroName={setHeroName}
+          setHeading={setHeading}
+        />
+      </div>
+
+      {userData && <Card data={userData} heroName={heroName} />}
     </div>
   );
 }
