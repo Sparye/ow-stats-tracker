@@ -38,6 +38,7 @@ const Dropdown: React.FC<Props> = (props) => {
     <div className="container">
       <div className="dropdown">
         <Select
+          placeholder="Select Hero"
           options={heroList}
           onChange={(e) => {
             console.log(e);
