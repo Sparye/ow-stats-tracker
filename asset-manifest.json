@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ow-stats-tracker/static/css/main.8addd564.chunk.css",
+    "main.js": "/ow-stats-tracker/static/js/main.22f0e62d.chunk.js",
+    "main.js.map": "/ow-stats-tracker/static/js/main.22f0e62d.chunk.js.map",
+    "runtime-main.js": "/ow-stats-tracker/static/js/runtime-main.65522d87.js",
+    "runtime-main.js.map": "/ow-stats-tracker/static/js/runtime-main.65522d87.js.map",
+    "static/js/2.fa264fcb.chunk.js": "/ow-stats-tracker/static/js/2.fa264fcb.chunk.js",
+    "static/js/2.fa264fcb.chunk.js.map": "/ow-stats-tracker/static/js/2.fa264fcb.chunk.js.map",
+    "static/js/3.65ea8ef4.chunk.js": "/ow-stats-tracker/static/js/3.65ea8ef4.chunk.js",
+    "static/js/3.65ea8ef4.chunk.js.map": "/ow-stats-tracker/static/js/3.65ea8ef4.chunk.js.map",
+    "index.html": "/ow-stats-tracker/index.html",
+    "static/css/main.8addd564.chunk.css.map": "/ow-stats-tracker/static/css/main.8addd564.chunk.css.map",
+    "static/js/2.fa264fcb.chunk.js.LICENSE.txt": "/ow-stats-tracker/static/js/2.fa264fcb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.65522d87.js",
+    "static/js/2.fa264fcb.chunk.js",
+    "static/css/main.8addd564.chunk.css",
+    "static/js/main.22f0e62d.chunk.js"
+  ]
+}
