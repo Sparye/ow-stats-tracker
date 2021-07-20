@@ -22,13 +22,14 @@ function App() {
   const getStats = async () => {
     fetch(`${URLHead}${playerName}/heroes/${heroName}`)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         return res.json();
       })
       .then((data) => {
         console.log(data);
         try {
           const average = data.competitiveStats.careerStats[heroName].average;
+          // const average = data.quickPlayStats.careerStats[heroName].average;
           const names = Object.keys(average);
           setUserData(average);
         } catch (error) {
