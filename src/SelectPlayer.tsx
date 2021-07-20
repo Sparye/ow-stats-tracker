@@ -16,7 +16,7 @@ const SelectPlayer: React.FC<Props> = (props) => {
     <div className="container">
       <div className="dropdown">
         <Select
-          placeholder="Select A Player"
+          placeholder="Select Player"
           options={playerList}
           onChange={(e) => {
             console.log(e);
