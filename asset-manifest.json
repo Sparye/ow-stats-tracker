@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ow-stats-tracker/static/css/main.8addd564.chunk.css",
-    "main.js": "/ow-stats-tracker/static/js/main.22f0e62d.chunk.js",
-    "main.js.map": "/ow-stats-tracker/static/js/main.22f0e62d.chunk.js.map",
+    "main.js": "/ow-stats-tracker/static/js/main.8335375f.chunk.js",
+    "main.js.map": "/ow-stats-tracker/static/js/main.8335375f.chunk.js.map",
     "runtime-main.js": "/ow-stats-tracker/static/js/runtime-main.65522d87.js",
     "runtime-main.js.map": "/ow-stats-tracker/static/js/runtime-main.65522d87.js.map",
     "static/js/2.fa264fcb.chunk.js": "/ow-stats-tracker/static/js/2.fa264fcb.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.65522d87.js",
     "static/js/2.fa264fcb.chunk.js",
     "static/css/main.8addd564.chunk.css",
-    "static/js/main.22f0e62d.chunk.js"
+    "static/js/main.8335375f.chunk.js"
   ]
 }
