@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/ow-stats-tracker/static/css/main.8addd564.chunk.css",
-    "main.js": "/ow-stats-tracker/static/js/main.8335375f.chunk.js",
-    "main.js.map": "/ow-stats-tracker/static/js/main.8335375f.chunk.js.map",
-    "runtime-main.js": "/ow-stats-tracker/static/js/runtime-main.65522d87.js",
-    "runtime-main.js.map": "/ow-stats-tracker/static/js/runtime-main.65522d87.js.map",
-    "static/js/2.fa264fcb.chunk.js": "/ow-stats-tracker/static/js/2.fa264fcb.chunk.js",
-    "static/js/2.fa264fcb.chunk.js.map": "/ow-stats-tracker/static/js/2.fa264fcb.chunk.js.map",
-    "static/js/3.65ea8ef4.chunk.js": "/ow-stats-tracker/static/js/3.65ea8ef4.chunk.js",
-    "static/js/3.65ea8ef4.chunk.js.map": "/ow-stats-tracker/static/js/3.65ea8ef4.chunk.js.map",
+    "main.css": "/ow-stats-tracker/static/css/main.3ca41aa3.chunk.css",
+    "main.js": "/ow-stats-tracker/static/js/main.b08d86a2.chunk.js",
+    "main.js.map": "/ow-stats-tracker/static/js/main.b08d86a2.chunk.js.map",
+    "runtime-main.js": "/ow-stats-tracker/static/js/runtime-main.1aa4c9e7.js",
+    "runtime-main.js.map": "/ow-stats-tracker/static/js/runtime-main.1aa4c9e7.js.map",
+    "static/css/2.4be38407.chunk.css": "/ow-stats-tracker/static/css/2.4be38407.chunk.css",
+    "static/js/2.10ef7f70.chunk.js": "/ow-stats-tracker/static/js/2.10ef7f70.chunk.js",
+    "static/js/2.10ef7f70.chunk.js.map": "/ow-stats-tracker/static/js/2.10ef7f70.chunk.js.map",
+    "static/js/3.b4b3c365.chunk.js": "/ow-stats-tracker/static/js/3.b4b3c365.chunk.js",
+    "static/js/3.b4b3c365.chunk.js.map": "/ow-stats-tracker/static/js/3.b4b3c365.chunk.js.map",
     "index.html": "/ow-stats-tracker/index.html",
-    "static/css/main.8addd564.chunk.css.map": "/ow-stats-tracker/static/css/main.8addd564.chunk.css.map",
-    "static/js/2.fa264fcb.chunk.js.LICENSE.txt": "/ow-stats-tracker/static/js/2.fa264fcb.chunk.js.LICENSE.txt"
+    "static/css/2.4be38407.chunk.css.map": "/ow-stats-tracker/static/css/2.4be38407.chunk.css.map",
+    "static/css/main.3ca41aa3.chunk.css.map": "/ow-stats-tracker/static/css/main.3ca41aa3.chunk.css.map",
+    "static/js/2.10ef7f70.chunk.js.LICENSE.txt": "/ow-stats-tracker/static/js/2.10ef7f70.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.65522d87.js",
-    "static/js/2.fa264fcb.chunk.js",
-    "static/css/main.8addd564.chunk.css",
-    "static/js/main.8335375f.chunk.js"
+    "static/js/runtime-main.1aa4c9e7.js",
+    "static/css/2.4be38407.chunk.css",
+    "static/js/2.10ef7f70.chunk.js",
+    "static/css/main.3ca41aa3.chunk.css",
+    "static/js/main.b08d86a2.chunk.js"
   ]
 }
