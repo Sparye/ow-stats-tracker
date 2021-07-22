@@ -1,6 +1,5 @@
 .card {
-  width: 400px;
-  min-width: 400px;
+  max-width: 600px;
   /* align-items: center;
   justify-content: space-between;
   position: relative; */
@@ -22,7 +21,7 @@
 .valueBlock {
   text-align: right;
   margin: 10px;
-  /* margin-right: 20px; */
+  margin-left: 100px;
 }
 
 .names,

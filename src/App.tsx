@@ -4,6 +4,9 @@ import axios from "axios";
 import Card from "./Card";
 import Dropdown from "./Dropdown";
 import SelectPlayer from "./SelectPlayer";
+import Banner from "./Banner";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "react-bootstrap";
 
 function App() {
   const [userData, setUserData] = useState<string>("");
@@ -47,14 +50,23 @@ function App() {
 
   return (
     <div className="App">
+      <Banner />
       <h1>{heading}</h1>
       <div className="selectContainer">
-        <SelectPlayer setPlayerName={setPlayerName} />
-        <Dropdown
-          heroName={heroName}
-          setHeroName={setHeroName}
-          setHeading={setHeading}
-        />
+        <Container>
+          <Row>
+            <Col>
+              <SelectPlayer setPlayerName={setPlayerName} />
+            </Col>
+            <Col>
+              <Dropdown
+                heroName={heroName}
+                setHeroName={setHeroName}
+                setHeading={setHeading}
+              />
+            </Col>
+          </Row>
+        </Container>
       </div>
 
       {userData && <Card data={userData} heroName={heroName} />}
