@@ -6,14 +6,15 @@ import Dropdown from "./Dropdown";
 import SelectPlayer from "./SelectPlayer";
 import Banner from "./Banner";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Alert, Spinner } from "react-bootstrap";
 
 function App() {
   const [userData, setUserData] = useState<string>("");
-  const [nameData, setNameData] = useState<string[]>();
   const [heroName, setHeroName] = useState<string>("zenyatta");
   const [heading, setHeading] = useState<string>("Zenyatta");
   const [playerName, setPlayerName] = useState<string>("JigglyPuff-11568");
+  const [heroData, setHeroData] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     getStats();
@@ -23,6 +24,7 @@ function App() {
   const URLHead = "https://ow-api.com/v1/stats/pc/us/";
 
   const getStats = async () => {
+    setIsLoading(true);
     fetch(`${URLHead}${playerName}/heroes/${heroName}`)
       .then((res) => {
         // console.log(res);
@@ -35,7 +37,11 @@ function App() {
           // const average = data.quickPlayStats.careerStats[heroName].average;
           const names = Object.keys(average);
           setUserData(average);
+          setHeroData(true);
+          setIsLoading(false);
         } catch (error) {
+          setHeroData(false);
+          setIsLoading(false);
           console.log(error);
         }
         // const average = data.competitiveStats.careerStats[heroName].average;
@@ -69,7 +75,21 @@ function App() {
         </Container>
       </div>
 
-      {userData && <Card data={userData} heroName={heroName} />}
+      {isLoading ? (
+        <div className="spinner">
+          <Spinner animation="border"></Spinner>
+        </div>
+      ) : (
+        [
+          heroData ? (
+            <Card data={userData} heroName={heroName} />
+          ) : (
+            <Alert key={"warning"} variant={"warning"}>
+              Not enough play time on the hero
+            </Alert>
+          ),
+        ]
+      )}
     </div>
   );
 }
