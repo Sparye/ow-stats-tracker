@@ -65,7 +65,6 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <ModeSwitch setCompMode={setCompMode} />
       <h1>{heading}</h1>
       <div className="selectContainer">
         <Container>
@@ -82,6 +81,10 @@ function App() {
             </Col>
           </Row>
         </Container>
+      </div>
+      <div className="modeSwitch">
+        {" "}
+        <ModeSwitch setCompMode={setCompMode} />
       </div>
 
       {isLoading ? (

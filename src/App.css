@@ -40,3 +40,14 @@
 .spinner {
   margin-top: 200px;
 }
+
+.modeSwitch {
+  position: relative;
+  margin: 20px;
+  z-index: 1;
+}
+
+.selectContainer {
+  position: relative;
+  z-index: 2;
+}
