@@ -5,6 +5,7 @@ import Card from "./Card";
 import Dropdown from "./Dropdown";
 import SelectPlayer from "./SelectPlayer";
 import Banner from "./Banner";
+import ModeSwitch from "./ModeSwitch";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Alert, Spinner } from "react-bootstrap";
 
@@ -15,10 +16,11 @@ function App() {
   const [playerName, setPlayerName] = useState<string>("JigglyPuff-11568");
   const [heroData, setHeroData] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [compMode, setCompMode] = useState<boolean>(true);
 
   useEffect(() => {
     getStats();
-  }, [heroName, playerName]);
+  }, [heroName, playerName, compMode]);
 
   // const URLHead = "https://ow-api.com/v1/stats/pc/us/JigglyPuff-11568/heroes/";
   const URLHead = "https://ow-api.com/v1/stats/pc/us/";
@@ -33,10 +35,16 @@ function App() {
       .then((data) => {
         console.log(data);
         try {
-          const average = data.competitiveStats.careerStats[heroName].average;
-          // const average = data.quickPlayStats.careerStats[heroName].average;
-          const names = Object.keys(average);
-          setUserData(average);
+          if (compMode) {
+            const average = data.competitiveStats.careerStats[heroName].average;
+            const names = Object.keys(average);
+            setUserData(average);
+          } else {
+            const average = data.quickPlayStats.careerStats[heroName].average;
+            const names = Object.keys(average);
+            setUserData(average);
+          }
+
           setHeroData(true);
           setIsLoading(false);
         } catch (error) {
@@ -57,6 +65,7 @@ function App() {
   return (
     <div className="App">
       <Banner />
+      <ModeSwitch setCompMode={setCompMode} />
       <h1>{heading}</h1>
       <div className="selectContainer">
         <Container>
@@ -84,9 +93,11 @@ function App() {
           heroData ? (
             <Card data={userData} heroName={heroName} />
           ) : (
-            <Alert key={"warning"} variant={"warning"}>
-              Not enough play time on the hero
-            </Alert>
+            <div className="alert">
+              <Alert key={"warning"} variant={"warning"}>
+                Not enough play time on the hero
+              </Alert>
+            </div>
           ),
         ]
       )}
