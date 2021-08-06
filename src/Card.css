@@ -10,6 +10,8 @@
 .block {
   display: flex;
   justify-content: center;
+  width: 600px;
+  margin: 0 auto;
   /* max-width: 50vw; */
 }
 
